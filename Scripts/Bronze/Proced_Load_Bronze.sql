@@ -1,7 +1,7 @@
 /*
-============================================================================================================
+==================================================================================================
 Stored Procedure: Load Bronze Layer (Source ->  Bronze)
-============================================================================================================
+==================================================================================================
 
 Script Purpose:
 This script will load data into the bronze schema from external CSV files. It performs the following actions:
@@ -12,7 +12,7 @@ Parameteres:
 -None
 -This stored procedure does not accept any parameters or return any values
 
-============================================================================================================
+==================================================================================================
 */
 
 
@@ -50,7 +50,7 @@ BEGIN
 			TABLOCK
 			);
 		SET @End_Time = GETDATE()
-		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + ' seconds')
 		PRINT ('---------------------------------------------------------------------------------')
 
 
@@ -69,7 +69,7 @@ BEGIN
 				TABLOCK
 			);
 		SET @End_Time = GETDATE()
-		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + ' seconds')
 		PRINT ('---------------------------------------------------------------------------------')
 
 
@@ -86,7 +86,7 @@ BEGIN
 				TABLOCK
 			);
 		SET @End_Time = GETDATE()
-		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + ' seconds')
 
 
 
@@ -110,7 +110,7 @@ BEGIN
 				TABLOCK
 			);
 		SET @End_Time = GETDATE()
-		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + ' seconds')
 		PRINT ('---------------------------------------------------------------------------------')
 
 
@@ -128,7 +128,7 @@ BEGIN
 				TABLOCK
 			);
 		SET @End_Time = GETDATE()
-		PRINT ('The loading time of the table was:' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The loading time of the table was:' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + ' seconds')
 		PRINT ('---------------------------------------------------------------------------------')
 
 
@@ -146,21 +146,21 @@ BEGIN
 				TABLOCK
 			);
 		SET @End_Time = GETDATE()
-		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The loading time of the table was: ' + CAST(DATEDIFF(SECOND, @Start_Time, @End_Time) AS NVARCHAR) + ' seconds')
 		PRINT ('---------------------------------------------------------------------------------')
 
 
 
 		SET @Batch_End_Time = GETDATE()
-		PRINT ('The overall loading time of the batch was: ' + CAST(DATEDIFF(SECOND, @Batch_Start_Time, @Batch_End_Time) AS NVARCHAR) + 'seconds')
+		PRINT ('The overall loading time of the batch was: ' + CAST(DATEDIFF(SECOND, @Batch_Start_Time, @Batch_End_Time) AS NVARCHAR) + ' seconds')
 		PRINT ('---------------------------------------------------------------------------------')
 	END TRY
 	BEGIN CATCH
 		PRINT ('---------------------------------------------------------------------------------')
 		PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
-		PRINT 'Error Message: ' + ERROR_MESSAGE();
-		PRINT 'Error Message: ' + CAST(ERROR_NUMBER() AS NVARCHAR);
-		PRINT 'Error Message: ' + CAST(ERROR_STATE() AS NVARCHAR);
+		PRINT 'Error Message: ' + ERROR_MESSAGE()
+		PRINT 'Error Message: ' + CAST(ERROR_NUMBER() AS NVARCHAR)
+		PRINT 'Error Message: ' + CAST(ERROR_STATE() AS NVARCHAR)
 		PRINT ('---------------------------------------------------------------------------------')
 	END CATCH
 END
