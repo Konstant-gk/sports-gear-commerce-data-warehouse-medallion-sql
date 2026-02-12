@@ -323,11 +323,3 @@ WHERE id NOT IN (SELECT prd_key FROM silver.crm_prd_info);
 SELECT prd_key
 FROM silver.crm_prd_info
 WHERE prd_key LIKE 'CL_VE%' OR prd_key LIKE 'AC_BS%' OR prd_key LIKE 'BI_TB%'
-
-
-
-
-
-SELECT * FROM [bronze].[erp_px_cat_g1v2]
-SELECT * FROM [silver].[erp_px_cat_g1v2]
-
